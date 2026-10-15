@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alone Digital | Digital Dreams. Engineered to Reality.</title>
+    <meta name="description" content="Independent digital studio founded by Aditya Pandey. We build high-performance websites, intelligent Telegram bots, and custom digital automation solutions.">
+    <meta name="theme-color" content="#07090e">
+    <link rel="canonical" href="https://alonedigital.pages.dev/">
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Alone Digital | Digital Dreams. Engineered to Reality.">
+    <meta property="og:description" content="High-performance websites, Telegram bots, and automation solutions. Founded by Aditya Pandey.">
+    <meta property="og:type" content="website">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#07090e',
+                        cardBg: '#0f131f',
+                        cardHover: '#161c2d',
+                        accentBlue: '#3b82f6',
+                        accentViolet: '#8b5cf6',
+                        borderSubtle: '#1e293b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #07090e;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(15, 19, 31, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: linear-gradient(135deg, rgba(15, 19, 31, 0.8) 0%, rgba(10, 13, 22, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+            transform: translateY(-3px);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        .hero-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.05) 50%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #07090e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-blue-500 selection:text-white">
+
+    <!-- Sticky Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-panel border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg p-1">
+                <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+                    <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-lg tracking-wider text-white">ALONE <span class="text-blue-400">DIGITAL</span></span>
+                    <span class="text-[10px] tracking-widest text-gray-400 uppercase font-medium">Digital Studio</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#home" class="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors">Home</a>
+                <a href="#services" class="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors">Services</a>
+                <a href="#projects" class="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#process" class="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors">Process</a>
+                <a href="#pricing" class="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors">Pricing</a>
+                <a href="#about" class="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors">About</a>
+                <a href="#faq" class="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors">FAQ</a>
+                <a href="#contact" class="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Right Action -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#contact" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white gradient-bg shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                    Let's Talk
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-lg" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-b border-white/10 px-6 py-6 space-y-4 shadow-2xl">
+            <a href="#home" class="block text-base font-medium text-gray-300 hover:text-blue-400 transition-colors mobile-link">Home</a>
+            <a href="#services" class="block text-base font-medium text-gray-300 hover:text-blue-400 transition-colors mobile-link">Services</a>
+            <a href="#projects" class="block text-base font-medium text-gray-300 hover:text-blue-400 transition-colors mobile-link">Projects</a>
+            <a href="#process" class="block text-base font-medium text-gray-300 hover:text-blue-400 transition-colors mobile-link">Process</a>
+            <a href="#pricing" class="block text-base font-medium text-gray-300 hover:text-blue-400 transition-colors mobile-link">Pricing</a>
+            <a href="#about" class="block text-base font-medium text-gray-300 hover:text-blue-400 transition-colors mobile-link">About</a>
+            <a href="#faq" class="block text-base font-medium text-gray-300 hover:text-blue-400 transition-colors mobile-link">FAQ</a>
+            <a href="#contact" class="block text-base font-medium text-gray-300 hover:text-blue-400 transition-colors mobile-link">Contact</a>
+            <div class="pt-4 border-t border-white/10 flex flex-col gap-3">
+                <a href="#contact" class="w-full py-3 rounded-xl text-center text-sm font-semibold text-white gradient-bg shadow-lg shadow-blue-500/25 mobile-link">
+                    Let's Talk
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
+            <!-- Background Lighting Effects -->
+            <div class="hero-glow top-1/4 left-10"></div>
+            <div class="hero-glow bottom-10 right-10" style="background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Hero Text Content -->
+                    <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel border border-blue-500/30 text-blue-400 text-xs font-semibold tracking-wider uppercase">
+                            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                            INDEPENDENT DIGITAL STUDIO
+                        </div>
+
+                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
+                            We Build <span class="gradient-text">Digital Experiences</span> That Move Businesses Forward.
+                        </h1>
+
+                        <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            From high-performance websites to intelligent Telegram bots and automation systems, Alone Digital helps businesses turn ideas into practical digital solutions.
+                        </p>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-white gradient-bg shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all text-center">
+                                Start a Project <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                            <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-gray-300 glass-panel hover:text-white hover:border-white/20 transition-all text-center">
+                                Explore Our Work
+                            </a>
+                        </div>
+
+                        <!-- Service Badges -->
+                        <div class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs font-semibold text-gray-400 tracking-wider">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-code text-blue-400"></i> WEB DEVELOPMENT
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-robot text-purple-400"></i> TELEGRAM BOTS
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-bolt text-blue-400"></i> DIGITAL AUTOMATION
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual Composition -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative w-full aspect-square max-w-md mx-auto">
+                            <!-- Outer glow ring -->
+                            <div class="absolute inset-0 rounded-3xl gradient-bg opacity-20 blur-2xl animate-pulse"></div>
+                            
+                            <!-- Main Visual Container -->
+                            <div class="relative w-full h-full rounded-3xl glass-panel p-6 flex flex-col justify-between shadow-2xl border border-white/10">
+                                <!-- Top status bar inside visual card -->
+                                <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                        <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                        <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                                    </div>
+                                    <span class="text-xs font-mono text-gray-400">alone-digital.sys</span>
+                                </div>
+
+                                <!-- Center Code / Interface Preview -->
+                                <div class="space-y-4 my-auto">
+                                    <div class="p-4 rounded-xl bg-black/40 border border-white/5 font-mono text-xs text-blue-300 space-y-2">
+                                        <p class="text-gray-500">// Digital Dreams. Engineered to Reality.</p>
+                                        <p><span class="text-purple-400">const</span> <span class="text-yellow-300">brand</span> = {</p>
+                                        <p class="pl-4">name: <span class="text-green-400">"Alone Digital"</span>,</p>
+                                        <p class="pl-4">founder: <span class="text-green-400">"Aditya Pandey"</span>,</p>
+                                        <p class="pl-4">mission: <span class="text-green-400">"Practical Tech"</span></p>
+                                        <p>};</p>
+                                    </div>
+
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <div class="p-3 rounded-xl bg-blue-500/10 border border-blue-500/20 text-center">
+                                            <div class="text-xl font-bold text-blue-400">100%</div>
+                                            <div class="text-[10px] text-gray-400 uppercase tracking-wider mt-0.5">Responsive</div>
+                                        </div>
+                                        <div class="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-center">
+                                            <div class="text-xl font-bold text-purple-400">⚡ Fast</div>
+                                            <div class="text-[10px] text-gray-400 uppercase tracking-wider mt-0.5">Performance</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Bottom Tag -->
+                                <div class="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
+                                    <span>Status: Operational</span>
+                                    <span class="text-blue-400 font-medium">India 🇮🇳</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition Section -->
+        <section id="values" class="py-20 relative border-t border-white/5 bg-darkBg/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <h2 class="text-xs font-semibold tracking-widest text-blue-400 uppercase">Core Principles</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Technology With Purpose. Design With Intent.</h3>
+                    <p class="text-gray-400 text-base">We build solutions that look professional, load instantly, and serve your exact business objectives.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Value Card 1 -->
+                    <div class="glass-card p-8 rounded-2xl relative group">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                            01
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Built Around Your Goals</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Solutions designed around your actual requirements, target audience, and business model.</p>
+                    </div>
+
+                    <!-- Value Card 2 -->
+                    <div class="glass-card p-8 rounded-2xl relative group">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                            02
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Modern by Design</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Clean interfaces, sophisticated aesthetics, and fully responsive experiences across all devices.</p>
+                    </div>
+
+                    <!-- Value Card 3 -->
+                    <div class="glass-card p-8 rounded-2xl relative group">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                            03
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Performance Focused</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Efficient code, optimized assets, and fast-loading pages built for maximum engagement.</p>
+                    </div>
+
+                    <!-- Value Card 4 -->
+                    <div class="glass-card p-8 rounded-2xl relative group">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                            04
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Clear Communication</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Transparent scope, realistic timelines, and direct communication throughout the project.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 relative border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <h2 class="text-xs font-semibold tracking-widest text-blue-400 uppercase">What We Offer</h2>
+                    <h3 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Tailored Digital Capabilities</h3>
+                    <p class="text-gray-400 text-base">Comprehensive technical services designed to establish credibility and accelerate growth.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Service 01 -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </div>
+                                <span class="text-xs font-mono text-gray-500">SERVICE 01</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-3">Website Development</h4>
+                            <p class="text-sm text-gray-400 leading-relaxed mb-6">Professional websites designed to establish credibility and communicate a business's value effectively.</p>
+                            
+                            <div class="space-y-2 mb-8">
+                                <div class="text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Key Deliverables:</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-blue-400"></i> Business & Portfolio Websites</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-blue-400"></i> Coaching & Gym Websites</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-blue-400"></i> Restaurant & Local Business Sites</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-blue-400"></i> Contact Forms & Basic SEO</div>
+                            </div>
+                        </div>
+                        <button onclick="selectServiceForContact('Website Development')" class="w-full py-3 rounded-xl text-sm font-semibold text-white bg-blue-500/20 border border-blue-500/40 hover:bg-blue-500 hover:border-blue-500 transition-all text-center">
+                            Discuss This Service
+                        </button>
+                    </div>
+
+                    <!-- Service 02 -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-robot"></i>
+                                </div>
+                                <span class="text-xs font-mono text-gray-500">SERVICE 02</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-3">Telegram Bot Development</h4>
+                            <p class="text-sm text-gray-400 leading-relaxed mb-6">Useful Telegram bots designed to simplify tasks, automate workflows, and improve community management.</p>
+                            
+                            <div class="space-y-2 mb-8">
+                                <div class="text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Key Deliverables:</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-purple-400"></i> Welcome & Moderation Bots</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-purple-400"></i> Utility & Notification Bots</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-purple-400"></i> Custom Community Workflows</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-purple-400"></i> Admin Management Tools</div>
+                            </div>
+                        </div>
+                        <button onclick="selectServiceForContact('Telegram Bot Development')" class="w-full py-3 rounded-xl text-sm font-semibold text-white bg-purple-500/20 border border-purple-500/40 hover:bg-purple-500 hover:border-purple-500 transition-all text-center">
+                            Discuss This Service
+                        </button>
+                    </div>
+
+                    <!-- Service 03 -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                </div>
+                                <span class="text-xs font-mono text-gray-500">SERVICE 03</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-3">Website Redesign</h4>
+                            <p class="text-sm text-gray-400 leading-relaxed mb-6">Transform outdated, sluggish websites into modern, lightning-fast, and professional digital experiences.</p>
+                            
+                            <div class="space-y-2 mb-8">
+                                <div class="text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Key Deliverables:</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-blue-400"></i> UI/UX Modernization</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-blue-400"></i> Mobile Responsiveness Fixes</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-blue-400"></i> Speed & Asset Optimization</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-blue-400"></i> Brand Alignment & Polish</div>
+                            </div>
+                        </div>
+                        <button onclick="selectServiceForContact('Website Redesign')" class="w-full py-3 rounded-xl text-sm font-semibold text-white bg-blue-500/20 border border-blue-500/40 hover:bg-blue-500 hover:border-blue-500 transition-all text-center">
+                            Discuss This Service
+                        </button>
+                    </div>
+
+                    <!-- Service 04 -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <span class="text-xs font-mono text-gray-500">SERVICE 04</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-3">Digital Automation</h4>
+                            <p class="text-sm text-gray-400 leading-relaxed mb-6">Build practical scripts, API integrations, and automated workflows to reduce repetitive manual work.</p>
+                            
+                            <div class="space-y-2 mb-8">
+                                <div class="text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Key Deliverables:</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-purple-400"></i> Custom Integration Scripts</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-purple-400"></i> Notification Workflows</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-purple-400"></i> Data Management Automation</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-purple-400"></i> Workflow Consultation</div>
+                            </div>
+                        </div>
+                        <button onclick="selectServiceForContact('Digital Automation')" class="w-full py-3 rounded-xl text-sm font-semibold text-white bg-purple-500/20 border border-purple-500/40 hover:bg-purple-500 hover:border-purple-500 transition-all text-center">
+                            Discuss This Service
+                        </button>
+                    </div>
+
+                    <!-- Service 05 -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </div>
+                                <span class="text-xs font-mono text-gray-500">SERVICE 05</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-3">Landing Page Development</h4>
+                            <p class="text-sm text-gray-400 leading-relaxed mb-6">Create high-converting landing pages tailored for services, products, campaigns, and special offers.</p>
+                            
+                            <div class="space-y-2 mb-8">
+                                <div class="text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Key Deliverables:</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-blue-400"></i> High-Conversion Layouts</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-blue-400"></i> Fast Loading Speed</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-blue-400"></i> Clear Call-To-Actions</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-blue-400"></i> Lead Capture Integration</div>
+                            </div>
+                        </div>
+                        <button onclick="selectServiceForContact('Landing Page Development')" class="w-full py-3 rounded-xl text-sm font-semibold text-white bg-blue-500/20 border border-blue-500/40 hover:bg-blue-500 hover:border-blue-500 transition-all text-center">
+                            Discuss This Service
+                        </button>
+                    </div>
+
+                    <!-- Service 06 -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <span class="text-xs font-mono text-gray-500">SERVICE 06</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-white mb-3">Website Maintenance</h4>
+                            <p class="text-sm text-gray-400 leading-relaxed mb-6">Help maintain existing websites through content updates, bug fixes, security checks, and performance tweaks.</p>
+                            
+                            <div class="space-y-2 mb-8">
+                                <div class="text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Key Deliverables:</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-purple-400"></i> Content Updates & Tweaks</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-purple-400"></i> Bug & Issue Resolution</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-purple-400"></i> Performance Monitoring</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-400"><i class="fa-solid fa-check text-purple-400"></i> Ongoing Technical Support</div>
+                            </div>
+                        </div>
+                        <button onclick="selectServiceForContact('Website Maintenance')" class="w-full py-3 rounded-xl text-sm font-semibold text-white bg-purple-500/20 border border-purple-500/40 hover:bg-purple-500 hover:border-purple-500 transition-all text-center">
+                            Discuss This Service
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio & Project Showcase Section -->
+        <section id="projects" class="py-24 relative border-t border-white/5 bg-darkBg/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                    <h2 class="text-xs font-semibold tracking-widest text-blue-400 uppercase">Portfolio</h2>
+                    <h3 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Selected Work & Digital Experiments</h3>
+                    <p class="text-gray-400 text-base">Explore our concepts and demonstrations showcasing technical capability and clean design.</p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+                    <button onclick="filterProjects('all')" class="project-filter-btn px-5 py-2 rounded-xl text-xs font-semibold transition-all bg-blue-500 text-white shadow-lg shadow-blue-500/20" data-filter="all">ALL</button>
+                    <button onclick="filterProjects('websites')" class="project-filter-btn px-5 py-2 rounded-xl text-xs font-semibold transition-all glass-panel text-gray-300 hover:text-white" data-filter="websites">WEBSITES</button>
+                    <button onclick="filterProjects('bots')" class="project-filter-btn px-5 py-2 rounded-xl text-xs font-semibold transition-all glass-panel text-gray-300 hover:text-white" data-filter="bots">TELEGRAM BOTS</button>
+                    <button onclick="filterProjects('automation')" class="project-filter-btn px-5 py-2 rounded-xl text-xs font-semibold transition-all glass-panel text-gray-300 hover:text-white" data-filter="automation">AUTOMATION</button>
+                </div>
+
+                <!-- Project Cards Grid -->
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Project 1 -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="websites">
+                        <div class="p-6 bg-gradient-to-br from-blue-900/20 to-black/40 border-b border-white/5 relative aspect-video flex items-center justify-center">
+                            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-500/20 border border-blue-500/30 text-[10px] font-semibold text-blue-400 uppercase tracking-wider">Concept Demo</div>
+                            <div class="text-center space-y-2">
+                                <i class="fa-solid fa-store text-4xl text-blue-400"></i>
+                                <div class="text-sm font-bold text-white">Local Business Concept</div>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="text-xs font-mono text-blue-400 mb-1">WEBSITE DEVELOPMENT</div>
+                                <h4 class="text-lg font-bold text-white mb-2">Business Website Concept</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed mb-4">A premium, responsive website concept tailored for local businesses and service providers.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2.5 py-1 rounded-md bg-white/5 text-[10px] font-mono text-gray-300">HTML5</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-white/5 text-[10px] font-mono text-gray-300">TailwindCSS</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-white/5 text-[10px] font-mono text-gray-300">Responsive</span>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                                <button onclick="openProjectModal('Business Website Concept', 'A premium, responsive website concept tailored for local businesses and service providers. Designed for speed, mobile usability, and conversion optimization.', 'HTML5, TailwindCSS, JavaScript', 'Concept Demo')" class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-eye"></i> View Preview
+                                </button>
+                                <a href="#contact" class="text-xs font-semibold text-gray-300 hover:text-white flex items-center gap-1.5">
+                                    Request Similar <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="bots">
+                        <div class="p-6 bg-gradient-to-br from-purple-900/20 to-black/40 border-b border-white/5 relative aspect-video flex items-center justify-center">
+                            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-purple-500/20 border border-purple-500/30 text-[10px] font-semibold text-purple-400 uppercase tracking-wider">Bot Demo</div>
+                            <div class="text-center space-y-2">
+                                <i class="fa-brands fa-telegram text-4xl text-purple-400"></i>
+                                <div class="text-sm font-bold text-white">Utility Bot Workflow</div>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="text-xs font-mono text-purple-400 mb-1">TELEGRAM BOTS</div>
+                                <h4 class="text-lg font-bold text-white mb-2">Telegram Utility Bot Demo</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed mb-4">A demonstration of a Telegram bot workflow designed for community management and automated notifications.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2.5 py-1 rounded-md bg-white/5 text-[10px] font-mono text-gray-300">Node.js</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-white/5 text-[10px] font-mono text-gray-300">Telegram API</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-white/5 text-[10px] font-mono text-gray-300">Automation</span>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                                <button onclick="openProjectModal('Telegram Utility Bot Demo', 'A demonstration of a Telegram bot workflow designed for community management, welcome messages, and automated notifications.', 'Node.js, Telegram Bot API', 'Bot Demo')" class="text-xs font-semibold text-purple-400 hover:text-purple-300 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-eye"></i> View Preview
+                                </button>
+                                <a href="#contact" class="text-xs font-semibold text-gray-300 hover:text-white flex items-center gap-1.5">
+                                    Request Similar <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="websites">
+                        <div class="p-6 bg-gradient-to-br from-blue-900/20 to-black/40 border-b border-white/5 relative aspect-video flex items-center justify-center">
+                            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-blue-500/20 border border-blue-500/30 text-[10px] font-semibold text-blue-400 uppercase tracking-wider">Concept Demo</div>
+                            <div class="text-center space-y-2">
+                                <i class="fa-solid fa-graduation-cap text-4xl text-blue-400"></i>
+                                <div class="text-sm font-bold text-white">Coaching Institute Concept</div>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="text-xs font-mono text-blue-400 mb-1">WEBSITE DEVELOPMENT</div>
+                                <h4 class="text-lg font-bold text-white mb-2">Coaching Institute Concept</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed mb-4">A modern website concept built for educational institutes, featuring course lists, inquiry forms, and faculty sections.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2.5 py-1 rounded-md bg-white/5 text-[10px] font-mono text-gray-300">HTML5</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-white/5 text-[10px] font-mono text-gray-300">TailwindCSS</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-white/5 text-[10px] font-mono text-gray-300">UI/UX</span>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                                <button onclick="openProjectModal('Coaching Institute Concept', 'A modern website concept built for educational institutes, featuring course listings, student inquiry forms, and professional faculty sections.', 'HTML5, TailwindCSS, JavaScript', 'Concept Demo')" class="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-eye"></i> View Preview
+                                </button>
+                                <a href="#contact" class="text-xs font-semibold text-gray-300 hover:text-white flex items-center gap-1.5">
+                                    Request Similar <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- How We Work Section -->
+        <section id="process" class="py-24 relative border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <h2 class="text-xs font-semibold tracking-widest text-blue-400 uppercase">Workflow</h2>
+                    <h3 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">From Idea to Execution</h3>
+                    <p class="text-gray-400 text-base">A transparent, structured four-step process designed for clarity and quality results.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Step 1 -->
+                    <div class="glass-card p-8 rounded-2xl relative">
+                        <div class="text-4xl font-black text-blue-500/20 mb-4 font-mono">01</div>
+                        <h4 class="text-lg font-bold text-white mb-2">DISCOVER</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Understand the client's objectives, target audience, technical requirements, and project budget.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="glass-card p-8 rounded-2xl relative">
+                        <div class="text-4xl font-black text-purple-500/20 mb-4 font-mono">02</div>
+                        <h4 class="text-lg font-bold text-white mb-2">PLAN</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Define the project scope, feature list, deliverables, timeline, and provide a clear quotation.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="glass-card p-8 rounded-2xl relative">
+                        <div class="text-4xl font-black text-blue-500/20 mb-4 font-mono">03</div>
+                        <h4 class="text-lg font-bold text-white mb-2">BUILD</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Develop the solution with regular reviews and progress updates shared with the client.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="glass-card p-8 rounded-2xl relative">
+                        <div class="text-4xl font-black text-purple-500/20 mb-4 font-mono">04</div>
+                        <h4 class="text-lg font-bold text-white mb-2">DELIVER</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Test the project thoroughly and provide deployment instructions along with agreed handover materials.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-24 relative border-t border-white/5 bg-darkBg/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <h2 class="text-xs font-semibold tracking-widest text-blue-400 uppercase">Investment</h2>
+                    <h3 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Transparent Starting Prices</h3>
+                    <p class="text-gray-400 text-base">Clear indicative pricing in Indian Rupees. Final quotes depend on exact project scope and requirements.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Starter Website -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between border border-white/5 relative">
+                        <div>
+                            <div class="text-xs font-mono text-blue-400 mb-2">STARTER</div>
+                            <h4 class="text-2xl font-extrabold text-white mb-1">Starter Website</h4>
+                            <p class="text-xs text-gray-400 mb-6">Suitable for a simple landing page or small website.</p>
+                            
+                            <div class="mb-6">
+                                <span class="text-3xl sm:text-4xl font-black text-white">₹999</span>
+                                <span class="text-xs text-gray-400 ml-1">Starting Price</span>
+                            </div>
+
+                            <div class="space-y-3 mb-8">
+                                <div class="flex items-center gap-2 text-xs text-gray-300"><i class="fa-solid fa-check text-blue-400"></i> One-page website</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-300"><i class="fa-solid fa-check text-blue-400"></i> Responsive mobile design</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-300"><i class="fa-solid fa-check text-blue-400"></i> Basic contact CTA</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-300"><i class="fa-solid fa-check text-blue-400"></i> Basic SEO setup</div>
+                            </div>
+                        </div>
+                        <button onclick="selectPackageForContact('Starter Website', 'Under ₹1,000')" class="w-full py-3.5 rounded-xl text-sm font-semibold text-white glass-panel hover:bg-blue-500 hover:border-blue-500 transition-all text-center">
+                            Request Quote
+                        </button>
+                    </div>
+
+                    <!-- Growth Website (Featured) -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between border-2 border-blue-500/50 relative shadow-2xl shadow-blue-500/10">
+                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full gradient-bg text-white text-[10px] font-bold uppercase tracking-wider shadow-md">
+                            Most Popular
+                        </div>
+                        <div>
+                            <div class="text-xs font-mono text-blue-400 mb-2">GROWTH</div>
+                            <h4 class="text-2xl font-extrabold text-white mb-1">Growth Website</h4>
+                            <p class="text-xs text-gray-400 mb-6">Suitable for a complete small business website.</p>
+                            
+                            <div class="mb-6">
+                                <span class="text-3xl sm:text-4xl font-black text-white">₹2,999</span>
+                                <span class="text-xs text-gray-400 ml-1">Starting Price</span>
+                            </div>
+
+                            <div class="space-y-3 mb-8">
+                                <div class="flex items-center gap-2 text-xs text-gray-300"><i class="fa-solid fa-check text-blue-400"></i> Multiple content sections</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-300"><i class="fa-solid fa-check text-blue-400"></i> Responsive mobile design</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-300"><i class="fa-solid fa-check text-blue-400"></i> Services & About sections</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-300"><i class="fa-solid fa-check text-blue-400"></i> Contact inquiry form</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-300"><i class="fa-solid fa-check text-blue-400"></i> Basic SEO setup</div>
+                            </div>
+                        </div>
+                        <button onclick="selectPackageForContact('Growth Website', '₹1,000–₹3,000')" class="w-full py-3.5 rounded-xl text-sm font-semibold text-white gradient-bg shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all text-center">
+                            Request Quote
+                        </button>
+                    </div>
+
+                    <!-- Custom Project -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between border border-white/5 relative">
+                        <div>
+                            <div class="text-xs font-mono text-purple-400 mb-2">CUSTOM</div>
+                            <h4 class="text-2xl font-extrabold text-white mb-1">Custom Project</h4>
+                            <p class="text-xs text-gray-400 mb-6">Suitable for tailored website requirements or bots.</p>
+                            
+                            <div class="mb-6">
+                                <span class="text-3xl sm:text-4xl font-black text-white">₹4,999</span>
+                                <span class="text-xs text-gray-400 ml-1">Starting Price</span>
+                            </div>
+
+                            <div class="space-y-3 mb-8">
+                                <div class="flex items-center gap-2 text-xs text-gray-300"><i class="fa-solid fa-check text-purple-400"></i> Custom interface & design</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-300"><i class="fa-solid fa-check text-purple-400"></i> Additional advanced features</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-300"><i class="fa-solid fa-check text-purple-400"></i> Telegram bot or automation</div>
+                                <div class="flex items-center gap-2 text-xs text-gray-300"><i class="fa-solid fa-check text-purple-400"></i> Dedicated setup & support</div>
+                            </div>
+                        </div>
+                        <button onclick="selectPackageForContact('Custom Project', '₹3,000–₹5,000')" class="w-full py-3.5 rounded-xl text-sm font-semibold text-white glass-panel hover:bg-purple-500 hover:border-purple-500 transition-all text-center">
+                            Request Quote
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Founder & About Section -->
+        <section id="about" class="py-24 relative border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel border border-blue-500/30 text-blue-400 text-xs font-semibold tracking-wider uppercase">
+                            ABOUT ALONE DIGITAL
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Small Studio. Big Digital Ambitions.</h2>
+                        <p class="text-gray-400 text-base leading-relaxed">
+                            Alone Digital is an independent digital technology brand founded by <span class="text-white font-semibold">Aditya Pandey</span>. The brand focuses on modern websites, Telegram bots, and practical automation solutions that help businesses build a stronger digital presence.
+                        </p>
+                        <p class="text-gray-400 text-base leading-relaxed">
+                            Our approach combines thoughtful design, modern technology, and clear communication to transform ideas into useful digital experiences.
+                        </p>
+                        <div class="pt-2 flex items-center gap-6 text-xs text-gray-400 font-medium">
+                            <div><i class="fa-solid fa-location-dot text-blue-400 mr-1.5"></i> India</div>
+                            <div><i class="fa-solid fa-user-tie text-purple-400 mr-1.5"></i> Founder & Developer</div>
+                        </div>
+                    </div>
+
+                    <!-- Founder Profile Card -->
+                    <div class="lg:col-span-6">
+                        <div class="glass-card p-8 sm:p-10 rounded-3xl relative border border-white/10 overflow-hidden">
+                            <div class="absolute top-0 right-0 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                            
+                            <div class="flex items-center gap-5 mb-6">
+                                <div class="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center text-white text-2xl font-bold shadow-xl shadow-blue-500/30">
+                                    AP
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-white">Aditya Pandey</h3>
+                                    <p class="text-xs text-blue-400 font-mono mt-0.5">Founder & Developer</p>
+                                    <p class="text-[11px] text-gray-400 mt-1">Alone Digital Studio</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-black/40 border border-white/5 text-xs font-mono text-gray-300 space-y-2 mb-6">
+                                <p class="text-blue-400">tagline: <span class="text-gray-300">"Digital Dreams. Engineered to Reality."</span></p>
+                                <p class="text-purple-400">focus: <span class="text-gray-300">Websites, Telegram Bots, Automation</span></p>
+                            </div>
+
+                            <a href="https://t.me/AloneX_About" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl text-sm font-semibold text-white gradient-bg shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 hover:scale-[1.01] transition-transform">
+                                <i class="fa-brands fa-telegram text-lg"></i> Contact on Telegram (@AloneX_About)
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-24 relative border-t border-white/5 bg-darkBg/50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-4 mb-16">
+                    <h2 class="text-xs font-semibold tracking-widest text-blue-400 uppercase">FAQ</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Frequently Asked Questions</h3>
+                    <p class="text-gray-400 text-base">Got questions? We have clear, straightforward answers.</p>
+                </div>
+
+                <div class="space-y-4" id="faq-accordion">
+                    
+                    <!-- FAQ 1 -->
+                    <div class="glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between font-semibold text-white hover:text-blue-400 transition-colors focus:outline-none">
+                            <span>1. What does Alone Digital do?</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4">
+                            Alone Digital is an independent digital studio that builds high-performance websites, useful Telegram bots, and practical digital automation solutions to help businesses and creators establish a strong digital presence.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between font-semibold text-white hover:text-blue-400 transition-colors focus:outline-none">
+                            <span>2. How much does a website cost?</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4">
+                            Our websites start at ₹999 for starter pages and ₹2,999 for complete growth business websites. Custom projects start at ₹4,999. Final pricing depends on project scope and features.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between font-semibold text-white hover:text-blue-400 transition-colors focus:outline-none">
+                            <span>3. Can you create a website for my local business?</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4">
+                            Yes! We build professional websites for local businesses, coaching institutes, gyms, fitness centers, restaurants, and startups to help them attract more customers online.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between font-semibold text-white hover:text-blue-400 transition-colors focus:outline-none">
+                            <span>4. Do you develop Telegram bots?</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4">
+                            Yes, we develop custom Telegram bots including welcome bots, moderation bots, utility bots, notification bots, and community management workflows.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between font-semibold text-white hover:text-blue-400 transition-colors focus:outline-none">
+                            <span>5. How long does a project take?</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4">
+                            Project timelines depend on requirements. Simple landing pages can be completed in a few days, while growth websites typically take 1 to 2 weeks after scope confirmation.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between font-semibold text-white hover:text-blue-400 transition-colors focus:outline-none">
+                            <span>6. Can you redesign my existing website?</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4">
+                            Absolutely. We transform outdated, sluggish websites into modern, fast, and fully responsive digital experiences.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 7 -->
+                    <div class="glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between font-semibold text-white hover:text-blue-400 transition-colors focus:outline-none">
+                            <span>7. Are domain and hosting included?</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4">
+                            Domains, hosting subscriptions, and paid APIs are not included unless explicitly agreed. However, we assist with free hosting setup (like GitHub Pages or Netlify) and custom domain connection.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 8 -->
+                    <div class="glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between font-semibold text-white hover:text-blue-400 transition-colors focus:outline-none">
+                            <span>8. How do I start a project?</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4">
+                            Simply fill out the contact form below or reach out directly via Telegram at @AloneX_About. Tell us your goals and requirements, and we'll discuss the next steps.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 9 -->
+                    <div class="glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between font-semibold text-white hover:text-blue-400 transition-colors focus:outline-none">
+                            <span>9. Can you add custom features?</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4">
+                            Yes, we can implement custom features, integrations, forms, and automated scripts tailored to your specific business workflows.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 10 -->
+                    <div class="glass-card rounded-2xl overflow-hidden border border-white/5">
+                        <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex items-center justify-between font-semibold text-white hover:text-blue-400 transition-colors focus:outline-none">
+                            <span>10. How do I contact Alone Digital?</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-4">
+                            You can reach us anytime via Telegram at <a href="https://t.me/AloneX_About" target="_blank" class="text-blue-400 underline">@AloneX_About</a> or by submitting the project inquiry form on this website.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact and Lead Generation Section -->
+        <section id="contact" class="py-24 relative border-t border-white/5">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-4 mb-16">
+                    <h2 class="text-xs font-semibold tracking-widest text-blue-400 uppercase">Get In Touch</h2>
+                    <h3 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Have an Idea? Let's Build It.</h3>
+                    <p class="text-gray-400 text-base">Tell us what you want to create. Let's discuss your goals, requirements, and budget.</p>
+                </div>
+
+                <div class="glass-card p-8 sm:p-12 rounded-3xl border border-white/10 relative">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <!-- Direct Telegram Quick Contact Banner -->
+                    <div class="mb-10 p-6 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-4 text-center sm:text-left">
+                            <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center text-white text-xl shadow-md shrink-0">
+                                <i class="fa-brands fa-telegram"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Prefer Direct Telegram Chat?</h4>
+                                <p class="text-xs text-gray-400">Reach out directly to Founder Aditya Pandey at @AloneX_About</p>
+                            </div>
+                        </div>
+                        <a href="https://t.me/AloneX_About" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-white gradient-bg shadow-md hover:scale-105 transition-transform shrink-0">
+                            Open Telegram <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Inquiry Form -->
+                    <form id="inquiry-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Full Name -->
+                            <div class="space-y-2">
+                                <label for="form-name" class="block text-xs font-semibold text-gray-300 uppercase tracking-wider">Full Name *</label>
+                                <input type="text" id="form-name" required placeholder="Enter your full name" class="w-full px-4 py-3.5 rounded-xl bg-black/40 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm transition-colors">
+                            </div>
+                            <!-- Business Name -->
+                            <div class="space-y-2">
+                                <label for="form-business" class="block text-xs font-semibold text-gray-300 uppercase tracking-wider">Business Name (Optional)</label>
+                                <input type="text" id="form-business" placeholder="Your business or brand name" class="w-full px-4 py-3.5 rounded-xl bg-black/40 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Email or Telegram Username -->
+                            <div class="space-y-2">
+                                <label for="form-contact" class="block text-xs font-semibold text-gray-300 uppercase tracking-wider">Email or Telegram Username *</label>
+                                <input type="text" id="form-contact" required placeholder="e.g. name@domain.com or @username" class="w-full px-4 py-3.5 rounded-xl bg-black/40 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm transition-colors">
+                            </div>
+                            <!-- Required Service -->
+                            <div class="space-y-2">
+                                <label for="form-service" class="block text-xs font-semibold text-gray-300 uppercase tracking-wider">Required Service *</label>
+                                <select id="form-service" required class="w-full px-4 py-3.5 rounded-xl bg-[#0f131f] border border-white/10 text-white focus:outline-none focus:border-blue-500 text-sm transition-colors">
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option value="Website Development">Website Development</option>
+                                    <option value="Telegram Bot Development">Telegram Bot Development</option>
+                                    <option value="Website Redesign">Website Redesign</option>
+                                    <option value="Digital Automation">Digital Automation</option>
+                                    <option value="Landing Page Development">Landing Page Development</option>
+                                    <option value="Website Maintenance">Website Maintenance</option>
+                                    <option value="Custom Project">Custom Project</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Budget Options -->
+                        <div class="space-y-2">
+                            <label for="form-budget" class="block text-xs font-semibold text-gray-300 uppercase tracking-wider">Project Budget *</label>
+                            <select id="form-budget" required class="w-full px-4 py-3.5 rounded-xl bg-[#0f131f] border border-white/10 text-white focus:outline-none focus:border-blue-500 text-sm transition-colors">
+                                <option value="" disabled selected>Select budget range</option>
+                                <option value="Under ₹1,000">Under ₹1,000</option>
+                                <option value="₹1,000–₹3,000">₹1,000–₹3,000</option>
+                                <option value="₹3,000–₹5,000">₹3,000–₹5,000</option>
+                                <option value="₹5,000+">₹5,000+</option>
+                                <option value="Need a custom quotation">Need a custom quotation</option>
+                            </select>
+                        </div>
+
+                        <!-- Project Description -->
+                        <div class="space-y-2">
+                            <label for="form-desc" class="block text-xs font-semibold text-gray-300 uppercase tracking-wider">Project Description *</label>
+                            <textarea id="form-desc" required rows="4" placeholder="Describe your project, goals, and key requirements..." class="w-full px-4 py-3.5 rounded-xl bg-black/40 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm transition-colors resize-none"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full py-4 rounded-xl font-semibold text-white gradient-bg shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.01] active:scale-[0.99] transition-all text-center">
+                            Send Inquiry to Telegram <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+
+                        <p class="text-center text-xs text-gray-500">
+                            Note: Submitting this form prepares your inquiry and opens Telegram (@AloneX_About) with your message ready to send. No server database is used on this static frontend.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-darkBg pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                
+                <!-- Brand Info -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center shadow-lg shadow-blue-500/20">
+                            <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span class="font-bold text-base text-white">ALONE <span class="text-blue-400">DIGITAL</span></span>
+                    </div>
+                    <p class="text-sm text-gray-400 max-w-sm">
+                        Digital Dreams. Engineered to Reality. Founded by Aditya Pandey. Providing high-performance websites, Telegram bots, and digital automation solutions.
+                    </p>
+                    <div class="text-xs text-gray-500">
+                        Primary Contact: <a href="https://t.me/AloneX_About" target="_blank" class="text-blue-400 hover:underline">@AloneX_About</a> (Telegram)
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-semibold text-white uppercase tracking-wider">Navigation</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-blue-400 transition-colors">Home</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition-colors">Services</a></li>
+                        <li><a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a></li>
+                        <li><a href="#process" class="hover:text-blue-400 transition-colors">Process</a></li>
+                        <li><a href="#pricing" class="hover:text-blue-400 transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal & Info -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-semibold text-white uppercase tracking-wider">Legal & Setup</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><button onclick="openModal('privacy')" class="hover:text-blue-400 transition-colors text-left">Privacy Policy</button></li>
+                        <li><button onclick="openModal('terms')" class="hover:text-blue-400 transition-colors text-left">Terms of Service</button></li>
+                        <li><button onclick="openModal('deployment')" class="hover:text-blue-400 transition-colors text-left">Android Deployment Guide</button></li>
+                        <li><button onclick="openModal('admin')" class="hover:text-blue-400 transition-colors text-left flex items-center gap-1.5"><i class="fa-solid fa-lock text-[10px]"></i> Admin Dashboard</button></li>
+                    </ul>
+                </div>
+
+                <!-- Socials -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-semibold text-white uppercase tracking-wider">Connect</h4>
+                    <div class="flex items-center gap-3 text-gray-400 text-lg">
+                        <a href="https://t.me/AloneX_About" target="_blank" aria-label="Telegram" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center hover:text-blue-400 hover:border-blue-400/40 transition-all"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center hover:text-white hover:border-white/40 transition-all"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center hover:text-blue-400 hover:border-blue-400/40 transition-all"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center hover:text-purple-400 hover:border-purple-400/40 transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://youtube.com" target="_blank" aria-label="YouTube" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center hover:text-red-400 hover:border-red-400/40 transition-all"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <p class="text-[11px] text-gray-500 pt-2">India 🇮🇳</p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+                <p>&copy; <span id="current-year">2026</span> Alone Digital. Founded by Aditya Pandey. All rights reserved.</p>
+                <p class="mt-2 sm:mt-0">Digital Dreams. Engineered to Reality.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Universal Modal Container -->
+    <div id="universal-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div id="modal-box" class="glass-panel w-full max-w-2xl rounded-3xl p-6 sm:p-8 border border-white/10 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-6 right-6 w-9 h-9 rounded-xl glass-panel flex items-center justify-center text-gray-400 hover:text-white transition-colors" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-body" class="space-y-4">
+                <!-- Dynamic content injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification / Message Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden glass-panel border border-blue-500/40 px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 text-sm text-white">
+        <i class="fa-solid fa-circle-check text-blue-400 text-lg"></i>
+        <span id="toast-msg">Action completed successfully.</span>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Sticky Header Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 20) {
+                header.classList.add('bg-darkBg/90', 'shadow-lg');
+            } else {
+                header.classList.remove('bg-darkBg/90', 'shadow-lg');
+            }
+        });
+
+        // FAQ Accordion Toggle
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('fa-chevron-down') || button.querySelector('i');
+            
+            // Toggle current
+            const isOpen = !content.classList.contains('hidden');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-content').forEach(item => {
+                item.classList.add('hidden');
+            });
+            document.querySelectorAll('#faq-accordion button i').forEach(i => {
+                i.style.transform = 'rotate(0deg)';
+            });
+
+            if (isOpen) {
+                content.classList.add('hidden');
+                if(icon) icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.classList.remove('hidden');
+                if(icon) icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Service Preselection in Contact Form
+        function selectServiceForContact(serviceName) {
+            const selectEl = document.getElementById('form-service');
+            selectEl.value = serviceName;
+            
+            // Scroll to contact section
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            showToast(`Preselected service: ${serviceName}`);
+        }
+
+        // Pricing Package Preselection in Contact Form
+        function selectPackageForContact(packageName, budgetRange) {
+            const serviceSelect = document.getElementById('form-service');
+            const budgetSelect = document.getElementById('form-budget');
+            
+            serviceSelect.value = "Website Development";
+            budgetSelect.value = budgetRange;
+
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            showToast(`Selected package: ${packageName}`);
+        }
+
+        // Portfolio Filtering
+        function filterProjects(category) {
+            const buttons = document.querySelectorAll('.project-filter-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.className = "project-filter-btn px-5 py-2 rounded-xl text-xs font-semibold transition-all bg-blue-500 text-white shadow-lg shadow-blue-500/20";
+                } else {
+                    btn.className = "project-filter-btn px-5 py-2 rounded-xl text-xs font-semibold transition-all glass-panel text-gray-300 hover:text-white";
+                }
+            });
+
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Contact Form Submission & Telegram Flow
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('form-name').value.trim();
+            const business = document.getElementById('form-business').value.trim() || 'N/A';
+            const contactInfo = document.getElementById('form-contact').value.trim();
+            const service = document.getElementById('form-service').value;
+            const budget = document.getElementById('form-budget').value;
+            const description = document.getElementById('form-desc').value.trim();
+
+            const message = `Hello Alone Digital! 👋\n\nI want to start a project:\n• Name: ${name}\n• Business: ${business}\n• Contact: ${contactInfo}\n• Service: ${service}\n• Budget: ${budget}\n• Description: ${description}`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const telegramUrl = `https://t.me/AloneX_About?text=${encodedMessage}`;
+
+            // Open Telegram workflow
+            window.open(telegramUrl, '_blank');
+            showToast("Inquiry prepared! Opening Telegram (@AloneX_About)...");
+        }
+
+        // Modal Handler
+        const modal = document.getElementById('universal-modal');
+        const modalBody = document.getElementById('modal-body');
+
+        function openModal(type, extraData = null) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            if (type === 'privacy') {
+                modalBody.innerHTML = `
+                    <h3 class="text-2xl font-bold text-white mb-2">Privacy Policy</h3>
+                    <p class="text-xs text-blue-400 font-mono mb-4">Alone Digital Studio</p>
+                    <div class="space-y-3 text-sm text-gray-300 leading-relaxed">
+                        <p>At Alone Digital, accessible from our website, we respect your privacy. This policy outlines how we handle information.</p>
+                        <h4 class="font-bold text-white pt-2">1. Information Collection</h4>
+                        <p>We do not collect personal data on our servers. Any project inquiries submitted via our contact form are directly transmitted via Telegram to Founder Aditya Pandey (@AloneX_About) with your explicit action.</p>
+                        <h4 class="font-bold text-white pt-2">2. Local Storage</h4>
+                        <p>If you use the local demo admin editor, preferences are stored locally in your browser's localStorage and never transmitted to external servers.</p>
+                        <h4 class="font-bold text-white pt-2">3. Contact</h4>
+                        <p>For questions regarding privacy, reach out via Telegram at @AloneX_About.</p>
+                    </div>
+                `;
+            } else if (type === 'terms') {
+                modalBody.innerHTML = `
+                    <h3 class="text-2xl font-bold text-white mb-2">Terms of Service</h3>
+                    <p class="text-xs text-blue-400 font-mono mb-4">Alone Digital Studio</p>
+                    <div class="space-y-3 text-sm text-gray-300 leading-relaxed">
+                        <p>Welcome to Alone Digital. By accessing our website and services, you agree to these terms.</p>
+                        <h4 class="font-bold text-white pt-2">1. Services</h4>
+                        <p>We provide website development, Telegram bot development, redesigns, and digital automation as agreed upon in individual project scopes.</p>
+                        <h4 class="font-bold text-white pt-2">2. Pricing & Payments</h4>
+                        <p>Indicative starting prices are shown in Indian Rupees (INR). Final project costs and payment terms are agreed upon before work commences.</p>
+                        <h4 class="font-bold text-white pt-2">3. Intellectual Property</h4>
+                        <p>Project deliverables are handed over to the client upon full payment completion as per agreement.</p>
+                    </div>
+                `;
+            } else if (type === 'deployment') {
+                modalBody.innerHTML = `
+                    <h3 class="text-2xl font-bold text-white mb-2">Android & Free Hosting Deployment Guide</h3>
+                    <p class="text-xs text-blue-400 font-mono mb-4">Deploying Alone Digital via GitHub Pages</p>
+                    <div class="space-y-3 text-sm text-gray-300 leading-relaxed">
+                        <p>You can host this complete single-file website entirely for free using GitHub Pages.</p>
+                        <ol class="list-decimal pl-5 space-y-2">
+                            <li><strong>Save the Code:</strong> Ensure your website file is saved as <code class="bg-black/50 px-1.5 py-0.5 rounded text-blue-400">index.html</code>.</li>
+                            <li><strong>Create GitHub Repository:</strong> Go to GitHub, create a new public repository (e.g. <code class="bg-black/50 px-1.5 py-0.5 rounded text-blue-400">alone-digital</code>).</li>
+                            <li><strong>Upload File:</strong> Upload your <code class="bg-black/50 px-1.5 py-0.5 rounded text-blue-400">index.html</code> file to the repository root.</li>
+                            <li><strong>Enable GitHub Pages:</strong> Go to repository <strong>Settings</strong> > <strong>Pages</strong>, select the main branch, and save.</li>
+                            <li><strong>Access Website:</strong> Your live website will be available at <code class="bg-blue-400/20 text-blue-300 px-1.5 py-0.5 rounded">https://yourusername.github.io/alone-digital</code>.</li>
+                            <li><strong>Custom Domain:</strong> You can connect a custom domain anytime via repository settings.</li>
+                        </ol>
+                        <p class="pt-2 text-xs text-gray-400">Note: As a static frontend website, secure server-side databases or automated backend auth require external free-tier services like Supabase.</p>
+                    </div>
+                `;
+            } else if (type === 'admin') {
+                // Check if saved admin content exists in localStorage
+                const savedHeadline = localStorage.getItem('ad_headline') || "We Build Digital Experiences That Move Businesses Forward.";
+                modalBody.innerHTML = `
+                    <h3 class="text-2xl font-bold text-white mb-2">Admin Dashboard (Local Demo Editor)</h3>
+                    <p class="text-xs text-blue-400 font-mono mb-4">Local Demo Mode (localStorage-backed)</p>
+                    <div class="space-y-4 text-sm text-gray-300">
+                        <div class="p-4 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300">
+                            <strong>Note:</strong> This is a client-side local demo editor. Changes apply only within your current browser session using <code class="bg-black/40 px-1 py-0.5 rounded">localStorage</code>. For shared team content management, a Supabase or backend database integration is recommended.
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider">Edit Hero Headline</label>
+                            <input type="text" id="admin-headline-input" value="${savedHeadline}" class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/10 text-white text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div class="flex gap-3 pt-2">
+                            <button onclick="saveAdminChanges()" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-white gradient-bg shadow-md">
+                                Save Changes (Local)
+                            </button>
+                            <button onclick="resetAdminDefaults()" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-gray-300 glass-panel hover:text-white">
+                                Reset to Default
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function openProjectModal(title, description, tech, category) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            modalBody.innerHTML = `
+                <div class="space-y-4">
+                    <div class="inline-block px-3 py-1 rounded-lg bg-blue-500/20 text-blue-400 text-xs font-semibold uppercase">${category}</div>
+                    <h3 class="text-2xl font-bold text-white">${title}</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">${description}</p>
+                    <div class="pt-2">
+                        <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Technology Stack:</div>
+                        <div class="text-sm font-mono text-blue-300 bg-black/40 p-3 rounded-xl border border-white/5">${tech}</div>
+                    </div>
+                    <div class="pt-4 flex gap-3">
+                        <a href="#contact" onclick="closeModal()" class="px-6 py-3 rounded-xl text-xs font-semibold text-white gradient-bg shadow-md">
+                            Request Similar Project
+                        </a>
+                        <button onclick="closeModal()" class="px-6 py-3 rounded-xl text-xs font-semibold text-gray-300 glass-panel hover:text-white">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function saveAdminChanges() {
+            const newHeadline = document.getElementById('admin-headline-input').value;
+            localStorage.setItem('ad_headline', newHeadline);
+            showToast("Admin changes saved locally!");
+            closeModal();
+            // Optional: update hero if desired
+        }
+
+        function resetAdminDefaults() {
+            localStorage.removeItem('ad_headline');
+            showToast("Reset to default settings.");
+            closeModal();
+        }
+
+        // Toast Notification Helper
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.textContent = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        }
+
+        // Close modal on outside click
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+  </html>
